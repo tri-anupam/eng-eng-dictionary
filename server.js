@@ -2,6 +2,8 @@
 const express = require('express')
 const app = express()
 
+const fs = require('fs')
+
 //calling main Router -->index.js from routes folder
 const mainRouter = require('./routes/index')
 //calling about Router --> about.js form routes folder
@@ -14,7 +16,7 @@ const PORT = process.env.PORT || 3500
 app.set("view engine","ejs");
 
 //Static Middleware
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //calling mainRouter
 app.use(mainRouter)

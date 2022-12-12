@@ -3,11 +3,47 @@
 <head>
     <%-include('../partials/head.ejs');%>
     <title>Main Page</title>
+    <style>
+       .containers{
+           /* border: 1px solid red; */
+           margin: 10px;
+           text-align: center; 
+       }
+    #inputData{
+        /* border: 1px solid black; */
+        border-bottom: 2px solid black;
+        margin: 0 0 0 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    label{
+        font-size: 25px;
+    }
+    button{
+        margin: 0 auto;
+        padding: 5px;
+        color: white;
+        background-color: black;
+        border: 1px solid black;
+    }
+   </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <%-include('../partials/nav.ejs')%>
     <br>
+
+    <div class="containers">
+        <label>Enter a word:</label>
+        <input type="text" id="inputData" placeholder="write something">
+        <button id="btn">Get Defination</button>
+    </div>
+
+    <div id="putData">
+        <div class="def-value"></div>
+        <div class="def-audio"></div>
+    </div>
     <%-include('../partials/script.ejs')%>
 </body>
 </html>
